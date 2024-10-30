@@ -158,3 +158,40 @@ virtual ✓ [======================================] 0000/2000 VUs  11m0s
 
 
 [virtual- 가상 스레드 따로 생성 안하고 설정으로만]
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+WARN[0000] There were unknown fields in the options exported in the script  error="json: unknown field \"http\""
+     execution: local
+        script: scripts/basic_virtual.js
+        output: InfluxDBv1 (http://localhost:8086)
+
+     scenarios: (100.00%) 1 scenario, 2000 max VUs, 11m20s max duration (incl. graceful stop):
+              * virtual: Up to 2000 looping VUs for 11m0s over 5 stages (gracefulRampDown: 30s, gracefulStop: 20s)
+
+
+     data_received..................: 76 MB  115 kB/s
+     data_sent......................: 60 MB  91 kB/s
+     http_req_blocked...............: avg=18.85µs    min=0s       med=0s       max=28.24ms  p(90)=0s       p(95)=0s
+     http_req_connecting............: avg=9.97µs     min=0s       med=0s       max=10.31ms  p(90)=0s       p(95)=0s
+   ✓ http_req_duration..............: avg=209.59ms   min=196.69ms med=209.47ms max=317.36ms p(90)=215.43ms p(95)=216.47ms       
+       { expected_response:true }...: avg=209.59ms   min=196.69ms med=209.47ms max=317.36ms p(90)=215.43ms p(95)=216.47ms       
+   ✓ http_req_failed................: 0.00%  0 out of 479102
+     http_req_receiving.............: avg=93.66µs    min=0s       med=0s       max=29.94ms  p(90)=505.4µs  p(95)=620.4µs        
+     http_req_sending...............: avg=21.66µs    min=0s       med=0s       max=9.52ms   p(90)=0s       p(95)=0s
+     http_req_tls_handshaking.......: avg=0s         min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+     http_req_waiting...............: avg=209.48ms   min=196.69ms med=209.36ms max=316.83ms p(90)=215.3ms  p(95)=216.34ms       
+     http_reqs......................: 479102 725.084485/s
+     iteration_duration.............: avg=1.21s      min=1.19s    med=1.21s    max=1.32s    p(90)=1.21s    p(95)=1.21s
+     iterations.....................: 479102 725.084485/s
+     vus............................: 7      min=1           max=1999
+     vus_max........................: 2000   min=2000        max=2000
+     waiting_time...................: avg=209.483108 min=196.6906 med=209.3627 max=316.8339 p(90)=215.3093 p(95)=216.3498       
+
+                                                                                                                                
+running (11m00.8s), 0000/2000 VUs, 479102 complete and 0 interrupted iterations                                                 
+virtual ✓ [======================================] 0000/2000 VUs  11m0s  
