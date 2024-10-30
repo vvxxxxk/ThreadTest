@@ -1,0 +1,160 @@
+[mvc]
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+WARN[0000] There were unknown fields in the options exported in the script  error="json: unknown field \"http\""
+     execution: local
+        script: scripts/basic_external.js
+        output: InfluxDBv1 (http://localhost:8086)
+
+     scenarios: (100.00%) 1 scenario, 2000 max VUs, 11m20s max duration (incl. graceful stop):
+              * spring_mvc: Up to 2000 looping VUs for 11m0s over 5 stages (gracefulRampDown: 30s, gracefulStop: 20s)
+
+
+     data_received..................: 64 MB  97 kB/s
+     data_sent......................: 51 MB  77 kB/s
+     http_req_blocked...............: avg=11.62µs    min=0s       med=0s       max=24.13ms   p(90)=0s       p(95)=0s
+     http_req_connecting............: avg=6.95µs     min=0s       med=0s       max=24.13ms   p(90)=0s       p(95)=0s
+   ✓ http_req_duration..............: avg=446.41ms   min=200.17ms med=276.33ms max=1.11s     p(90)=915.91ms p(95)=1.01s
+       { expected_response:true }...: avg=446.41ms   min=200.17ms med=276.33ms max=1.11s     p(90)=915.91ms p(95)=1.01s
+   ✓ http_req_failed................: 0.00%  0 out of 400964
+     http_req_receiving.............: avg=97.88µs    min=0s       med=0s       max=14.43ms   p(90)=504.6µs  p(95)=613.5µs       
+     http_req_sending...............: avg=9.97µs     min=0s       med=0s       max=11.61ms   p(90)=0s       p(95)=0s
+     http_req_tls_handshaking.......: avg=0s         min=0s       med=0s       max=0s        p(90)=0s       p(95)=0s
+     http_req_waiting...............: avg=446.3ms    min=200.01ms med=276.22ms max=1.11s     p(90)=915.74ms p(95)=1.01s
+     http_reqs......................: 400964 606.762451/s
+     iteration_duration.............: avg=1.44s      min=1.2s     med=1.27s    max=2.11s     p(90)=1.91s    p(95)=2.01s
+     iterations.....................: 400964 606.762451/s
+     vus............................: 8      min=1           max=1999
+     vus_max........................: 2000   min=2000        max=2000
+     waiting_time...................: avg=446.308222 min=200.0168 med=276.2281 max=1116.3458 p(90)=915.7412 p(95)=1010.7584     
+
+
+running (11m00.8s), 0000/2000 VUs, 400964 complete and 0 interrupted iterations
+
+
+[webflux]
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+WARN[0000] There were unknown fields in the options exported in the script  error="json: unknown field \"http\""
+     execution: local
+        script: scripts/basic_webflux.js
+        output: InfluxDBv1 (http://localhost:8086)
+
+     scenarios: (100.00%) 1 scenario, 2000 max VUs, 11m20s max duration (incl. graceful stop):
+              * webflux: Up to 2000 looping VUs for 11m0s over 5 stages (gracefulRampDown: 30s, gracefulStop: 20s)
+
+
+     data_received..................: 50 MB  76 kB/s
+     data_sent......................: 60 MB  91 kB/s
+     http_req_blocked...............: avg=7.26µs     min=0s       med=0s       max=18.21ms  p(90)=0s       p(95)=0s
+     http_req_connecting............: avg=2.1µs      min=0s       med=0s       max=18.21ms  p(90)=0s       p(95)=0s
+   ✓ http_req_duration..............: avg=208.95ms   min=199.3ms  med=208.97ms max=410.98ms p(90)=215.14ms p(95)=216.15ms       
+       { expected_response:true }...: avg=208.95ms   min=199.3ms  med=208.97ms max=410.98ms p(90)=215.14ms p(95)=216.15ms       
+   ✓ http_req_failed................: 0.00%  0 out of 479475
+     http_req_receiving.............: avg=69.59µs    min=0s       med=0s       max=10.02ms  p(90)=249.1µs  p(95)=558.5µs        
+     http_req_sending...............: avg=13.29µs    min=0s       med=0s       max=13.09ms  p(90)=0s       p(95)=0s
+     http_req_tls_handshaking.......: avg=0s         min=0s       med=0s       max=0s       p(90)=0s       p(95)=0s
+     http_req_waiting...............: avg=208.86ms   min=199.3ms  med=208.88ms max=410.23ms p(90)=215.05ms p(95)=216.08ms       
+     http_reqs......................: 479475 725.963768/s
+     iteration_duration.............: avg=1.2s       min=1.2s     med=1.2s     max=1.41s    p(90)=1.21s    p(95)=1.21s
+     iterations.....................: 479475 725.963768/s
+     vus............................: 8      min=1           max=1999
+     vus_max........................: 2000   min=2000        max=2000
+     waiting_time...................: avg=208.869177 min=199.3005 med=208.885  max=410.2334 p(90)=215.0597 p(95)=216.0829       
+
+                                                                                                                                
+running (11m00.5s), 0000/2000 VUs, 479475 complete and 0 interrupted iterations                                                 
+webflux ✓ [======================================] 0000/2000 VUs  11m0s  
+
+
+[virtual- not join]
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+WARN[0000] There were unknown fields in the options exported in the script  error="json: unknown field \"http\""
+     execution: local
+        script: scripts/basic_virtual.js
+        output: InfluxDBv1 (http://localhost:8086)
+
+     scenarios: (100.00%) 1 scenario, 2000 max VUs, 11m20s max duration (incl. graceful stop):
+              * virtual: Up to 2000 looping VUs for 11m0s over 5 stages (gracefulRampDown: 30s, gracefulStop: 20s)
+
+
+     data_received..................: 92 MB  139 kB/s
+     data_sent......................: 72 MB  110 kB/s
+     http_req_blocked...............: avg=17.17µs  min=0s med=0s      max=23.51ms  p(90)=0s      p(95)=0s
+     http_req_connecting............: avg=9.92µs   min=0s med=0s      max=12.7ms   p(90)=0s      p(95)=0s
+   ✓ http_req_duration..............: avg=1.03ms   min=0s med=874.5µs max=131.71ms p(90)=1.61ms  p(95)=2.04ms
+       { expected_response:true }...: avg=1.03ms   min=0s med=874.5µs max=131.71ms p(90)=1.61ms  p(95)=2.04ms
+   ✓ http_req_failed................: 0.00%  0 out of 578826
+     http_req_receiving.............: avg=98.91µs  min=0s med=0s      max=27ms     p(90)=509.1µs p(95)=542.6µs
+     http_req_sending...............: avg=17.81µs  min=0s med=0s      max=37.81ms  p(90)=0s      p(95)=0s
+     http_req_tls_handshaking.......: avg=0s       min=0s med=0s      max=0s       p(90)=0s      p(95)=0s
+     http_req_waiting...............: avg=922.02µs min=0s med=701µs   max=130.14ms p(90)=1.49ms  p(95)=1.89ms
+     http_reqs......................: 578826 876.000611/s
+     iteration_duration.............: avg=1s       min=1s med=1s      max=1.13s    p(90)=1s      p(95)=1s
+     iterations.....................: 578826 876.000611/s
+     vus............................: 6      min=1           max=1999
+     vus_max........................: 2000   min=2000        max=2000
+     waiting_time...................: avg=0.922028 min=0  med=0.701   max=130.1494 p(90)=1.4901  p(95)=1.8904
+
+                                                                                                                                
+running (11m00.8s), 0000/2000 VUs, 578826 complete and 0 interrupted iterations                                                 
+virtual ✓ [======================================] 0000/2000 VUs  11m0s 
+
+
+[virtual- join]
+
+         /\      Grafana   /‾‾/
+    /\  /  \     |\  __   /  /
+   /  \/    \    | |/ /  /   ‾‾\
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/
+
+WARN[0000] There were unknown fields in the options exported in the script  error="json: unknown field \"http\""
+     execution: local
+        script: scripts/basic_virtual.js
+        output: InfluxDBv1 (http://localhost:8086)
+
+     scenarios: (100.00%) 1 scenario, 2000 max VUs, 11m20s max duration (incl. graceful stop):
+              * virtual: Up to 2000 looping VUs for 11m0s over 5 stages (gracefulRampDown: 30s, gracefulStop: 20s)
+
+
+     data_received..................: 76 MB  116 kB/s
+     data_sent......................: 60 MB  91 kB/s
+     http_req_blocked...............: avg=17.51µs    min=0s       med=0s       max=14.79ms  p(90)=0s        p(95)=0s
+     http_req_connecting............: avg=9.16µs     min=0s       med=0s       max=11.32ms  p(90)=0s        p(95)=0s
+   ✓ http_req_duration..............: avg=208.52ms   min=198.22ms med=208.14ms max=318.8ms  p(90)=214.43ms  p(95)=216.06ms      
+       { expected_response:true }...: avg=208.52ms   min=198.22ms med=208.14ms max=318.8ms  p(90)=214.43ms  p(95)=216.06ms      
+   ✓ http_req_failed................: 0.00%  0 out of 479536
+     http_req_receiving.............: avg=105.19µs   min=0s       med=0s       max=14.73ms  p(90)=508µs     p(95)=783.1µs       
+     http_req_sending...............: avg=19.93µs    min=0s       med=0s       max=11.32ms  p(90)=0s        p(95)=0s
+     http_req_tls_handshaking.......: avg=0s         min=0s       med=0s       max=0s       p(90)=0s        p(95)=0s
+     http_req_waiting...............: avg=208.4ms    min=198.22ms med=208.02ms max=318.09ms p(90)=214.29ms  p(95)=215.92ms      
+     http_reqs......................: 479536 726.037583/s
+     iteration_duration.............: avg=1.2s       min=1.19s    med=1.2s     max=1.32s    p(90)=1.21s     p(95)=1.21s
+     iterations.....................: 479536 726.037583/s
+     vus............................: 5      min=1           max=1999
+     vus_max........................: 2000   min=2000        max=2000
+     waiting_time...................: avg=208.400028 min=198.2225 med=208.0256 max=318.0985 p(90)=214.29115 p(95)=215.92        
+
+                                                                                                                                
+running (11m00.5s), 0000/2000 VUs, 479536 complete and 0 interrupted iterations                                                 
+virtual ✓ [======================================] 0000/2000 VUs  11m0s  
+
+
+[virtual- 가상 스레드 따로 생성 안하고 설정으로만]

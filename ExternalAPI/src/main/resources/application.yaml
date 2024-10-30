@@ -1,6 +1,2 @@
 server:
   port: 10001
-  tomcat:
-    threads:
-      max: 1        # 사용할 수 있는 최대 스레드 개수
-      min-spare: 1   # 활성화 되어 있는 스레드 개수
